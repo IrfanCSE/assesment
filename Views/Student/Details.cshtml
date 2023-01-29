@@ -1,0 +1,26 @@
+@using primetechmvc.DTO
+@model StudentDto
+
+@{
+    ViewBag.Title = "Students";
+}
+
+<div>
+    <h1>Student Information</h1>
+    <h3>@Model.Name [@Model.Roll]</h3>
+</div>
+<table class="pt-3 table table-bordered table-responsive table-hover">
+    <tr>
+        <th>Department</th>
+        <th>Subject</th>
+        <th>Credit</th>
+    </tr>
+    @foreach (var subject in Model.Subjects)
+    {
+        <tr>
+            <td>@subject.DepartmentName</td>
+            <td>@subject.SubjectName</td>
+            <td>@subject.Credit</td>
+        </tr>
+    }
+</table>
